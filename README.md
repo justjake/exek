@@ -1,8 +1,26 @@
 # Exek
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/exek`. To experiment with that code, run `bin/console` for an interactive prompt.
+Comprehensive tools to start and run commands.
 
-TODO: Delete this and the text above, and describe your gem
+Most existing gems that address command execution provide a limited interface
+or lack notable features. In contast, Exek seeks to provide comprehensive
+support for all of a program's exec needs with one thoughtfully-designed
+library.
+
+Intended features:
+
+- A "Command" class that encapsulates argv, env, and IO options, and
+  process state.
+- Easy-to-use high level interfaces with sensible defaults for running commands
+  to completion.
+- Comprehensive support for low-level concerns like piping, PTYs, and file
+  descriptor magic.
+- Utilities for manipulating `sh` script strings, idiomatically building
+  argument arrays, and generating reusable interaces for common system commands.
+- Tracing and introspection facilities for logging and latency analysis.
+- Safety: does not monkeypatch external modules, encourage mixins or use eval.
+  Attempts to guide developers away from unsafe practices like shell scripts
+  and shell injection.
 
 ## Installation
 

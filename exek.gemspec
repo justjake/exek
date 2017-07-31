@@ -7,21 +7,31 @@ Gem::Specification.new do |spec|
   spec.name          = "exek"
   spec.version       = Exek::VERSION
   spec.authors       = ["Jake Teton-Landis"]
-  spec.email         = ["jake.tl@airbnb.com"]
+  spec.email         = ["just.1.jake@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Comprehensive tools to start and run commands.}
+  spec.description   = <<-EOS
+Most existing gems that address command execution provide a limited interface
+or lack notable features. In contast, Exek seeks to provide comprehensive
+support for all of a program's exec needs with one thoughtfully-designed
+library.
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+Intended features:
 
+- A "Command" class that encapsulates argv, env, and IO options, and
+  process state.
+- Easy-to-use high level interfaces with sensible defaults for running commands
+  to completion.
+- Comprehensive support for low-level concerns like piping, PTYs, and file
+  descriptor magic.
+- Utilities for manipulating `sh` script strings, idiomatically building
+  argument arrays, and generating reusable interaces for common system commands.
+- Tracing and introspection facilities for logging and latency analysis.
+- Safety: does not monkeypatch external modules, encourage mixins or use eval.
+  Attempts to guide developers away from unsafe practices like shell scripts
+  and shell injection.
+EOS
+  spec.homepage      = "https://github.com/justjake/exek"
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
